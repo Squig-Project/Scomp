@@ -4,7 +4,7 @@ if [ ! -d "bin" ]; then
 else
     pushd "bin"
 
-    gcc -c ../src/scomp.c -o scomp.o -lz -Wall -Wextra -Werror
+    gcc -c ../src/scomp.c -o scomp.o -Wall -Wextra -Werror
     ar rcs libscomp.a scomp.o
 
     rm scomp.o
