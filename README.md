@@ -27,3 +27,7 @@ int main(void)
 ```
 ### Important
 When linking your binary with ``./libscomp.a``make sure to also link the zlib static library, ``-lz``.
+```bash
+# example
+gcc -o main src/main.c -Llib/ -lscomp -lz
+```
