@@ -20,7 +20,7 @@ char* compress_data(char *input, const char *out_file, unsigned long *compressed
     }
 
     FILE *file = fopen(out_file, "wb");
-    if (file == NULL) { perror("fopen"); return NULL; }
+    if (file == NULL) { perror("fopen"); free(compressed_data); return NULL; }
 
     fwrite(compressed_data, 1, *compressed_size, file);
     fclose(file);
@@ -52,7 +52,7 @@ void decompress_data(char *input, const char *out_file, unsigned long compressed
     }
 
     FILE *file = fopen(out_file, "w");
-    if (file == NULL) { perror("fopen"); return; }
+    if (file == NULL) { perror("fopen"); free(uncompressed_data); return; }
 
     fwrite(uncompressed_data, 1, uncompressed_size, file);
     fclose(file);
