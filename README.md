@@ -5,7 +5,7 @@ Scomp(SquigCompress) is a compression library made in pure C with zlib.
 To build Scomp, you have to own a Linux machine, this project has not been tested for the Windows platform. Make sure you have installed zlib, gnu compiler collection v12.2.0, and the GNU binutils.
 
 ## Compiling
-To compile Scomp, run the ``./build.sh`` script. To clean up the bin folder, run the ``./clean.sh`` script.
+To compile Scomp, run the ``./build.sh`` script. To clean up the bin folder, run the ``./clean.sh`` script. 
 
 ## License
 Scomp goes by the Zlib license, for more information read LICENSE.txt.
@@ -25,3 +25,5 @@ int main(void)
   return 0;
 }
 ```
+### Important
+When linking your binary with ``./libscomp.a``make sure to also link the zlib static library, ``-lz``.
