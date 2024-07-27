@@ -9,3 +9,18 @@ To compile Scomp, run the ``./build.sh`` script. To clean up the bin folder, run
 
 ## License
 Scomp goes by the Zlib license, for more information read LICENSE.txt.
+
+## Examples
+```c
+#include"scomp.h"
+
+int main(void)
+{
+  char buffer[14] = "Hello, World!";
+
+  unsigned long compressed_size;
+  char *compressed_data = compress_data(buffer, "compressed.scomp", &compressed_size);
+  decompress_data(compressed_data, "decompressed.txt", compressed_size);
+  return 0;
+}
+```
